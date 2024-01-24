@@ -22,7 +22,7 @@ FROM base AS builder
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 
-COPY next.config.js next-env.d.ts package.json postcss.config.js tailwind.config.ts tsconfig.json ./
+COPY next.config.js package.json postcss.config.js tailwind.config.ts tsconfig.json ./
 COPY sentry.server.config.ts sentry.edge.config.ts sentry.client.config.ts ./
 COPY src ./src
 
