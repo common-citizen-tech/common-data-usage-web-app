@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
-import { fetchData } from "~/lib/api/fetchData";
 import { ThreeDots } from "react-loader-spinner";
 import {
   getDataOrganizationRoute,
@@ -11,15 +10,13 @@ import {
 } from "~/lib/routes";
 import { Combobox } from "@headlessui/react";
 import { useRouter } from "next/navigation";
+import { searchEntities } from '~/serverActions/search'
 
 const QUERY_MIN_LEN = 3;
 
 const boxClassName =
   "absolute top-full left-0 w-full bg-white shadow-lg rounded-b-lg mb-10";
 
-const searchEntities = (searchQuery) => {
-  return fetchData(`/search?query=${searchQuery}`);
-};
 const AutoCompleteLoader = () => {
   return (
     <Combobox.Options className={boxClassName}>

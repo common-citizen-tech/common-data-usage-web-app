@@ -1,0 +1,46 @@
+[tool.poetry]
+name = "common-data-usage-backend"
+version = "0.1.0"
+description = ""
+authors = ["Michał Oręziak <micorix.dev@gmail.com>"]
+readme = "README.md"
+packages = [{include = "common_data_usage_backend"}]
+
+[tool.poetry.dependencies]
+python = ">=3.11,<3.12"
+black = "^23.10.0"
+ruff = "^0.1.0"
+pandas = "<2.0.0"
+mypy = "^1.6.1"
+nbqa = "^1.7.0"
+poethepoet = "^0.24.1"
+jupyterlab = "^4.0.7"
+duckdb = "^0.9.1"
+pydantic = "^2.4.2"
+gql = "^3.4.1"
+python-dotenv = "^1.0.0"
+sseclient = "^0.0.27"
+ckanapi = "^4.7"
+pandera = "^0.17.2"
+openpyxl = "^3.1.2"
+pyarrow = "^14.0.2"
+luigi = "^3.4.0"
+flytekit = "^1.10.2"
+lxml = "^4.9.4"
+click = "^8.1.7"
+requests = {version = "^2.31.0", extras = ["socks"]}
+sentry-sdk = {extras = ["fastapi"], version = "^1.39.2"}
+pydantic-settings = "^2.1.0"
+polars = "^0.20.3"
+deltalake = "^0.15.1"
+orjson = "^3.9.10"
+seaborn = "^0.13.1"
+networkx = {extras = ["default"], version = "^3.2.1"}
+fastapi = "^0.109.0"
+uvicorn = {extras = ["standard"], version = "^0.26.0"}
+cachetools = "^5.3.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

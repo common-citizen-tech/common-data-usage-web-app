@@ -1,5 +1,8 @@
+const { withSentryConfig } = require("@sentry/nextjs");
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'standalone',
   eslint: {
     // Warning: This allows production builds to successfully complete even if
     // your project has ESLint errors.
@@ -13,7 +16,13 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   trailingSlash: true,
+  publicRuntimeConfig: {
+    FRONTEND_SENTRY_DSN: process.env.FRONTEND_SENTRY_DSN,
+  },
   async rewrites() {
+    if(process.env.NODE_ENV === "production")
+      return []
+
     return [
       {
         source: "/api/:path*/",
@@ -27,4 +36,6 @@ const nextConfig = {
   },
 };
 
-module.exports = nextConfig;
+module.exports = withSentryConfig(nextConfig, {
+  hideSourceMaps: false
+})

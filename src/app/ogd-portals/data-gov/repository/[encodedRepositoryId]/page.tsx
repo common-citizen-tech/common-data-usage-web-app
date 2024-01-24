@@ -1,4 +1,4 @@
-import TopFormatsChart from "~/app/ogd-portals/data-gov/data-organization/[orgId]/TopFormatsChart";
+import TopFormatsChart from "~/components/TopFormatsChart";
 import {
   getGraphDownloadPath,
   getRepoGraphPath,

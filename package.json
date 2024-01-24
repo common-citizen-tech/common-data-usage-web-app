@@ -14,6 +14,7 @@
   "dependencies": {
     "@headlessui/react": "^1.7.18",
     "@react-sigma/core": "^3.4.2",
+    "@sentry/nextjs": "^7.95.0",
     "@tanstack/react-query": "^5.17.15",
     "chart.js": "^4.4.1",
     "graphology": "^0.25.4",

@@ -3,8 +3,8 @@ import { Martel, Rubik } from "next/font/google";
 import "./globals.css";
 import Providers from "~/app/Providers";
 
-const martel = Martel({weight: [400, 600]});
-const rubik = Rubik({weight: [400, 500, 600]});
+const martel = Martel({weight: ['400', '600'], subsets: ["latin"]});
+const rubik = Rubik({weight: 'variable', subsets: ["latin"]});
 
 const fontClassName = [martel.className, rubik.className].join(" ");
 
@@ -21,9 +21,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={fontClassName}>
-        <Providers>{children}</Providers>
-      </body>
+    <head>
+      <script type="application/json" id="environment-data">
+        {JSON.stringify({
+          sentryDSN: process.env.SENTRY_DSN,
+        })}
+      </script>
+    </head>
+    <body className={fontClassName}>
+    <Providers>{children}</Providers>
+    </body>
     </html>
   );
 }

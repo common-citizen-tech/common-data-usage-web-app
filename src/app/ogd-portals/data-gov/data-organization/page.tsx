@@ -2,6 +2,8 @@ import OrgImage from "~/app/ogd-portals/data-gov/data-organization/OrgImage";
 import Link from "next/link";
 import { fetchData } from '~/lib/api/fetchData'
 
+export const dynamic = "force-dynamic";
+
 const DataOrganizationsRoute = async () => {
   const { organizations } = await fetchData(
     "/data-organization",

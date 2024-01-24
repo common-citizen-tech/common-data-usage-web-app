@@ -60,7 +60,7 @@ const DataGovIndex = () => {
         </div>
       </div>
       <span className="mt-16 block text-center font-serif text-lg text-gray-600">
-        Project started by{" "}
+        Project by{" "}
         <a href="https://micorix.dev" className="underline">
           micorix
         </a>{" "}
